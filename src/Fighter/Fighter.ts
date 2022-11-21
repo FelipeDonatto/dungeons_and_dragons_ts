@@ -1,16 +1,16 @@
 import Energy from '../Energy';
 
-interface FighterStats {
+export interface FighterStats {
   lifePoints: number;
   strength: number;
-  defense: number;
+  defense?: number;
   energy?: Energy;
 }
 
 interface Fighter extends FighterStats {
-  attack(enemy: FighterStats): void;
+  attack?(enemy: FighterStats): void;
   special?(enemy: FighterStats): void;
-  levelUp(): void;
+  levelUp?(): void;
   receiveDamage(attackPoints: number): number;
 }
 
